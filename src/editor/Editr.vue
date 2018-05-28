@@ -159,7 +159,6 @@ export default {
         exec (cmd, arg, sel){
             sel !== false && this.selection && this.restoreSelection(this.selection);
             document.execCommand(cmd, false, arg||"");
-            this.clearSelection();
 
             this.$nextTick(this.emit);
         },
