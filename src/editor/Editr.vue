@@ -232,7 +232,7 @@ $svgSize = 16px
     background $offwhite
     border-bottom 1px solid darken($offwhite, 7.5%)
     position relative
-    line-height $buttonHeight
+    line-height 1
     .editr--toolbar-item
         display inline-block
         max-width 32px
@@ -263,6 +263,7 @@ $svgSize = 16px
                 fill inherit
 
         &.vw-btn-separator
+            position relative
             width 1px
             margin 0 8px
 
