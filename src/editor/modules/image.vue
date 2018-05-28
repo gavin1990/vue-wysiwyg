@@ -39,7 +39,6 @@ export default {
             // vue2-dropzone config
             id: `${this._uid}vwdropzone`,
             url: this.uploadURL,
-            requestHeaders: this.options.image.requestHeaders,
             autoProcessQueue: this.uploadURL !== 'None',
             dictDefaultMessage: `<i class="fa">${UPLOAD_ICON}</i><br>Click here to upload...`,
 
@@ -48,9 +47,18 @@ export default {
     },
 
     methods: {
-        fileUploaded (file, r) {
-            if (r)
-                this.$emit("exec", "insertHTML", `<img src=${r}>`);
+        fileUploaded (file, res) {
+            if (res) {
+                if (this.options.image.imgUrl) {
+                    let imgUrl = `${this.options.image.imgUrl}${res}`
+                    if (this.options.image.resName) {
+                        imgUrl = `${this.options.image.imgUrl}${res[this.options.image.resName]}`
+                    }
+                    this.$emit("exec", "insertHTML", `<img src=${imgUrl}>`);
+                } else {
+                    this.$emit("exec", "insertHTML", `<img src=${res}>`);
+                }
+            }
         },
 
         fileAdded (file) {
