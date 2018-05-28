@@ -50,6 +50,8 @@ All keys are optional.
   // if the image option is not set, images are inserted as base64
   image: {
     uploadURL: "/api/myEndpoint",
+    imgUrl: "http://img.a.com/",    // 自定义上传图片地址
+    resName: 'data',    // 自定义上传接口回调对象
     dropzoneOptions: {}
   },
 
