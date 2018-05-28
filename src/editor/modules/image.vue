@@ -39,6 +39,7 @@ export default {
             // vue2-dropzone config
             id: `${this._uid}vwdropzone`,
             url: this.uploadURL,
+            requestHeaders: this.options.image.requestHeaders,
             autoProcessQueue: this.uploadURL !== 'None',
             dictDefaultMessage: `<i class="fa">${UPLOAD_ICON}</i><br>Click here to upload...`,
 
