@@ -7,7 +7,11 @@
   background: #f6f6f6;
   border-bottom: 1px solid #e4e4e4;
   position: relative;
-  display: flex;
+  line-height: 32px;
+}
+.editr--toolbar .editr--toolbar-item {
+  display: inline-block;
+  max-width: 32px;
   height: 32px;
 }
 .editr--toolbar a {

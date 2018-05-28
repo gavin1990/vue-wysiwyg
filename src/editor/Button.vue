@@ -1,20 +1,21 @@
 <template lang="pug">
 div(@mousedown="onBtnClick")
-	a(:class="'vw-btn-'+module.title", v-html="module.icon")
+	.editr--toolbar-item
+		a(:class="'vw-btn-'+module.title", v-html="module.icon")
 
-	.dashboard(
-		v-show="showDashboard",
-		ref="dashboard"
-	)
-		component(
-      v-if="module.render",
-      v-once,
-      ref="moduleDashboard",
-      :is="module",
-      @exec="exec",
-      :uid="uid"
-      :options="options"
-    )
+		.dashboard(
+			v-show="showDashboard",
+			ref="dashboard"
+		)
+			component(
+	      v-if="module.render",
+	      v-once,
+	      ref="moduleDashboard",
+	      :is="module",
+	      @exec="exec",
+	      :uid="uid"
+	      :options="options"
+	    )
 
 </template>
 <script>

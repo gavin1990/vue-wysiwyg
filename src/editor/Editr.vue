@@ -232,9 +232,11 @@ $svgSize = 16px
     background $offwhite
     border-bottom 1px solid darken($offwhite, 7.5%)
     position relative
-    display flex
-    height $buttonHeight
-
+    line-height $buttonHeight
+    .editr--toolbar-item
+        display inline-block
+        max-width 32px
+        height $buttonHeight
     a
         display inline-block
         width $buttonWidth
