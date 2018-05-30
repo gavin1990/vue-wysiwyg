@@ -66,7 +66,11 @@ export default {
             type: String,
             default: "Enter text..."
         },
-        options: Object
+        options: Object,
+        value: {
+            type: String,
+            default: ""
+        }
     },
 
 
@@ -172,7 +176,7 @@ export default {
         },
 
         emit () {
-          this.$emit("html", this.$refs.content.innerHTML);
+          this.$emit("input", this.$refs.content.innerHTML);
           this.$emit("change", this.$refs.content.innerHTML);
         },
 
@@ -190,13 +194,13 @@ export default {
         },
 
         syncHTML () {
-            if (this.html !== this.$refs.content.innerHTML)
-                this.innerHTML = this.html;
+            if (this.value !== this.$refs.content.innerHTML)
+                this.innerHTML = this.value;
         }
     },
 
     mounted () {
-        this.unwatch = this.$watch("html", this.syncHTML, { immediate: true});
+        this.unwatch = this.$watch("value", this.syncHTML, { immediate: true});
 
         document.addEventListener("click", this.onDocumentClick);
 
