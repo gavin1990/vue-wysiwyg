@@ -52,16 +52,7 @@ const modules = [
 ];
 
 export default {
-    model: {
-        prop: "html",
-        event: "html"
-    },
-
     props: {
-        html: {
-            type: String,
-            default: ""
-        },
         placeholder: {
             type: String,
             default: "Enter text..."
@@ -177,7 +168,6 @@ export default {
 
         emit () {
             this.$emit("input", this.$refs.content.innerHTML);
-            this.$emit("html", this.$refs.content.innerHTML);
             this.$emit("change", this.$refs.content.innerHTML);
         },
 
@@ -201,11 +191,7 @@ export default {
     },
 
     mounted () {
-        if (this.value) {
-            this.unwatch = this.$watch("value", this.syncHTML, { immediate: true});
-        } else {
-            this.unwatch = this.$watch("html", this.syncHTML, { immediate: true});
-        }
+        this.unwatch = this.$watch("value", this.syncHTML, { immediate: true});
 
         document.addEventListener("click", this.onDocumentClick);
 
