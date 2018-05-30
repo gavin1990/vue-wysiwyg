@@ -201,7 +201,11 @@ export default {
     },
 
     mounted () {
-        this.unwatch = this.$watch("value", this.syncHTML, { immediate: true});
+        if (this.value) {
+            this.unwatch = this.$watch("value", this.syncHTML, { immediate: true});
+        } else {
+            this.unwatch = this.$watch("html", this.syncHTML, { immediate: true});
+        }
 
         document.addEventListener("click", this.onDocumentClick);
 

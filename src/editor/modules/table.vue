@@ -1,12 +1,10 @@
 <template>
     <form @submit.prevent="insertTable" class="form">
         <label>
-            <div>Rows</div>
-            <input type="number" style="width: 60px"  min="2" v-model="rows">
+            Rows<input type="number" style="width: 60px"  min="2" v-model="rows">
         </label>
         <label>
-            <div>Columns</div>
-            <input type="number" style="width: 60px"  min="2" v-model="cols">
+            Columns<input type="number" style="width: 60px"  min="2" v-model="cols">
         </label>
 
         <button type="submit">Insert</button>
@@ -48,5 +46,9 @@ export default {
 
   label
     margin-right 1rem
+    input
+        display block
+        height 20px
+        line-height 20px
 
 </style>
