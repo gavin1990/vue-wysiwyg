@@ -176,8 +176,9 @@ export default {
         },
 
         emit () {
-          this.$emit("input", this.$refs.content.innerHTML);
-          this.$emit("change", this.$refs.content.innerHTML);
+            this.$emit("input", this.$refs.content.innerHTML);
+            this.$emit("html", this.$refs.content.innerHTML);
+            this.$emit("change", this.$refs.content.innerHTML);
         },
 
         onInput: debounce(function() {
