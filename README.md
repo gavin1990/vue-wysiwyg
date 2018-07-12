@@ -26,7 +26,7 @@ Also make sure to load the stylesheet.
 The exact syntax will depend on what preprocessor you use.
 
 ```css
-@import "~vue-wysiwyg/dist/vueWysiwyg.css";
+@import "~vue-wysiwyg/dist/vue-wysiwyg.css";
 ```
 
 In your components:

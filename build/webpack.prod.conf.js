@@ -20,9 +20,9 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: false,
   output: {
     path: config.build.assetsRoot,
-    library: "vueWysiwyg",
+    library: "vue-wysiwyg",
     libraryTarget: "umd",
-    filename: "vueWysiwyg.js",
+    filename: "vue-wysiwyg.js",
     umdNamedDefine: true
     // filename: utils.assetsPath('js/[name].[chunkhash].js'),
     // chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
@@ -46,7 +46,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     // extract css into its own file
     new ExtractTextPlugin({
-      filename: 'vueWysiwyg.css'
+      filename: 'vue-wysiwyg.css'
     })
   ]
 })

@@ -1,6 +1,6 @@
 {
   "name": "vue-wysiwyg",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A WYSIWYG HTML editor for Vue.js",
   "keywords": [
     "vue",
@@ -11,8 +11,8 @@
   ],
   "author": "Gregory <gregory.mkv@gmail.com>",
   "license": "MIT",
-  "main": "dist/vueWysiwyg.js",
-  "style": "dist/vueWysiwyg.css",
+  "main": "dist/vue-wysiwyg.js",
+  "style": "dist/vue-wysiwyg.css",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "npm run build:prod",
